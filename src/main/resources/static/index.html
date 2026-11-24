@@ -1,0 +1,48 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Placement Tracker</title>
+  <link rel="stylesheet" href="/style.css">
+  <script src="/app.js" defer></script>
+</head>
+<body>
+  <main>
+    <header>
+      <h1>Placement Tracker</h1>
+      <p>Keep your job applications and interview progress in one place.</p>
+    </header>
+    <section aria-labelledby="form-title">
+      <h2 id="form-title">Add an application</h2>
+      <form id="application-form">
+        <label>Company <input name="company" required maxlength="100" placeholder="e.g. Example Tech"></label>
+        <label>Role <input name="role" required maxlength="100" placeholder="e.g. Java Developer"></label>
+        <label>Status
+          <select name="status">
+            <option value="APPLIED">Applied</option>
+            <option value="INTERVIEW">Interview</option>
+            <option value="OFFER">Offer</option>
+            <option value="REJECTED">Rejected</option>
+          </select>
+        </label>
+        <div class="actions">
+          <button type="submit" id="save">Add application</button>
+          <button type="button" id="cancel" class="secondary" hidden>Cancel</button>
+        </div>
+      </form>
+      <p id="message" role="status"></p>
+    </section>
+    <section aria-labelledby="list-title">
+      <h2 id="list-title">Applications</h2>
+      <p id="empty" hidden>No applications yet. Add one above to get started.</p>
+      <div class="table-wrap" id="table-wrap" hidden>
+        <table>
+          <thead><tr><th scope="col">Company</th><th scope="col">Role</th><th scope="col">Status</th><th scope="col">Actions</th></tr></thead>
+          <tbody id="applications"></tbody>
+        </table>
+      </div>
+    </section>
+  </main>
+</body>
+</html>
